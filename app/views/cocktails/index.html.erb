@@ -1,0 +1,22 @@
+<%= render "navbar", cocktail: @cocktail %>
+
+<div class="container">
+
+  <% @cocktails.each do |cocktail|%>
+
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('http://cocktailbart.de/wp-content/uploads/2016/05/Cosmopolitan_1.jpg');">
+
+    <h2><%= cocktail.name%></h2>
+
+    <div class="card-description">
+
+      <% cocktail.doses.each do |dose|%>
+        <p>Ingredient: <%= dose.ingredient.name.upcase %></p>
+        <p><%= dose.description %></p>
+      <% end %>
+
+    </div>
+  </div>
+  <% end %>
+</div>
+
